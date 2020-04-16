@@ -32,7 +32,6 @@ public class Assignment1_4B {
 			System.out.println(iterator.next());
 		}// while
 	}// main
-
 }// class
 
 class CD {
