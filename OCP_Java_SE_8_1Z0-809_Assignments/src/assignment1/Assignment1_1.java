@@ -1,10 +1,23 @@
 package assignment1;
 
 public class Assignment1_1 {
-
+	
+	public class PopcornMaker {
+		void makePopCorn() {
+			float poppingSpeed = 2.0f;
+			System.out.println("Popcorn is popping at a speed of: " + poppingSpeed);
+			System.out.println("Popcorn is now ready");
+		}
+	}//inner class
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-}
+		/* Two line approach
+		Assignment1_1 a = new Assignment1_1();
+		PopcornMaker p = a.new PopcornMaker();
+		*/
+		
+		//One line approach
+		PopcornMaker p = new Assignment1_1().new PopcornMaker();
+		p.makePopCorn();
+	}//main
+}//class
