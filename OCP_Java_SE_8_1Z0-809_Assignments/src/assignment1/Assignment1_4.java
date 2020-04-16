@@ -21,14 +21,12 @@ public class Assignment1_4 {
 				System.out.println("Popping BubbleWrap...");
 			}// method
 		};// anon class
-		
 		obj.popIt(bubbleWrap);
 	}// main
 	
 	public void popIt(Poppable p) {
 		p.pop();
 	}// method
-	
 }// class
 
 interface Poppable {
