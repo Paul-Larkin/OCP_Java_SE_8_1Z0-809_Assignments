@@ -5,9 +5,9 @@ public class Assignment2_8 {
 	public static void main(String[] args) {
 		
 		PrinterCombo printer = new PrinterCombo();
-		printer.scan();
-		printer.sendFax();
-		printer.print();
+		printer.scan("Sample.jpeg");
+		printer.sendFax("Sample.pdf");
+		printer.print("Sample.docx");
 	}// main
 }// class
 
@@ -21,41 +21,47 @@ class PrinterCombo implements Print, Scan, Fax{
 	}
 	
 	@Override
-	public void sendFax() {
-		fax.sendFax();
+	public void sendFax(String str) {
+		fax.sendFax(str);
 	}
 	@Override
-	public void scan() {
-		scan.scan();
+	public void scan(String str) {
+		scan.scan(str);
 	}
 	@Override
-	public void print() {
-		System.out.println("Printing");
+	public void print(String str) {
+		System.out.println("-------------------");
+		System.out.println("Printing.... " + str);
+		System.out.println("-------------------\n");
 	}
 }// class
 
 class Scanner implements Scan{
 	@Override
-	public void scan() {
-		System.out.println("Scanning");
+	public void scan(String str) {
+		System.out.println("-------------------");
+		System.out.println("Scanning.... " + str);
+		System.out.println("-------------------\n");
 	}
 }// class
 
 class FaxMachine implements Fax{
 	@Override
-	public void sendFax() {
-		System.out.println("Faxing");
+	public void sendFax(String str) {
+		System.out.println("-------------------");
+		System.out.println("Faxing.... " + str);
+		System.out.println("-------------------\n");
 	}
 }// class
 
 interface Print{
-	public void print();
+	public void print(String str);
 }
 
 interface Scan{
-	public void scan();
+	public void scan(String str);
 }
 
 interface Fax{
-	public void sendFax();
+	public void sendFax(String str);
 }
