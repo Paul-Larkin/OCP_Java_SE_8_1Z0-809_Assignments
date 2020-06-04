@@ -1,3 +1,5 @@
+package assignment3;
+
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
@@ -8,7 +10,7 @@ public class Assignment3_5 {
 	public static void main(String[] args) {
 		
 		// I want to preserve FIFO order so I'll use ArrayDeque
-		ArrayDeque<String> l = new ArrayDeque<>();
+		ArrayDeque<String> queue = new ArrayDeque<>();
 		System.out.println("***TICKET MASTER***\nEnter 99 to Exit");
 		while(true) {
 			System.out.print("Enter name: ");
@@ -20,16 +22,16 @@ public class Assignment3_5 {
 			}
 			// The President Skips the queue
 			if(name.equals("Mr President")) {
-				l.addFirst(name);
+				queue.addFirst(name);
 				continue;
 			}
-			l.add(name);
+			queue.add(name);
 		}
 		
 		System.out.println("\nThe following people are in line:");
-		l.stream().forEach(System.out::println);
+		queue.stream().forEach(System.out::println);
 		
 		System.out.println("\nThe first in line is:");
-		System.out.println(l.peek());
+		System.out.println(queue.peek());
 	}
 }
