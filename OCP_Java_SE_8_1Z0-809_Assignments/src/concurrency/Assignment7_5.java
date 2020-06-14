@@ -12,30 +12,27 @@ public class Assignment7_5 {
 }
 
 class VoteCounter implements Runnable {
+	private static int vote_counter = 0; 
+	
 	public void run() {
 		for(int i=0; i<5; i++){
-			synchronized(VoteTracker.class) {
-				VoteTracker.increment_voteCounter();
+			synchronized(this) {
+				increment_voteCounter();
 				System.out.print("Vote recorded by " + Thread.currentThread().getName());
 				try {
 					Thread.sleep(2000);
 				} catch(InterruptedException e) {
-					
+					e.printStackTrace();
 				}
-			System.out.println(" current count is: " + VoteTracker.getVoteCounter());
+			System.out.println(" current count is: " + getVoteCounter());
 			}
 		}
 	}
-}
-
-class VoteTracker{
-	 private static int vote_counter = 0; 
-	 
-	 public synchronized static void increment_voteCounter(){
-	  VoteTracker.vote_counter++;
-	 }
-	 
-	 public synchronized static int getVoteCounter(){
-	  return VoteTracker.vote_counter;
-	 }
+	public static void increment_voteCounter(){
+		  vote_counter++;
+	}
+		 
+	public static int getVoteCounter(){
+		  return vote_counter;
+	}
 }
