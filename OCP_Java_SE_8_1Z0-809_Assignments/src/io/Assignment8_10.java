@@ -49,13 +49,13 @@ public class Assignment8_10 {
 
 class Bookv2 implements Serializable{
 	/**
-	 * Book class as previously created
+	 * Book class as previously created but modified to have a non-serializable field
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	private String title;
 	private String genre;
-	transient Author author;
+	private transient Author author;
 	private int price;
 	
 	public Bookv2(String title, String genre, Author author, int price) {
