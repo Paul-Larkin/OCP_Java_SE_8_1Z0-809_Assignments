@@ -10,6 +10,7 @@ public class Assignment8_1 {
 
 	public static void main(String[] args) {
 		
+		// Write to a file using the PrintWriter Class
 		File file = new File("HelloWorld.txt");
 
 //		if(!file.exists()) {
@@ -19,6 +20,7 @@ public class Assignment8_1 {
 //				e.printStackTrace();
 //			}
 //		}
+		
 		if(file.exists()) {
 			try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)));) {
 				pw.write("Hello World!");

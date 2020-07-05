@@ -8,6 +8,7 @@ public class Assignment8_3 {
 
 	public static void main(String[] args) {
 		
+		// Read file date using the FileReader Class
 		File file = new File("HelloWorld.txt");
 		char[] buffer = new char[1024];
 		
